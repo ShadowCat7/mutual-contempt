@@ -1,0 +1,102 @@
+<html>
+<head>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        #grid {
+            border: 1px solid white;
+            display: table;
+            font-family: 'Lucida Console';
+        }
+
+        #grid > div {
+            display: table-row;
+        }
+
+        #grid > div > div {
+            display: table-cell;
+            width: 16px;
+            height: 16px;
+            text-align: center;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        #messagetext {
+            max-height: 100px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+
+        #inline {
+            display: grid;
+            grid-template-columns: max-content auto;
+            vertical-align: top;
+        }
+
+        #tabs {
+            padding-left: 5px;
+        }
+
+        #tabgrid {
+            display: grid;
+            grid-gap: 5px;
+            grid-template-columns: max-content max-content max-content;
+        }
+
+        .tab {
+            border: 1px solid #ccc;
+            border-bottom: none;
+            color: #ccc;
+            cursor: pointer;
+            display: inline-block;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .tab.active {
+            border: 2px solid white;
+            border-bottom: none;
+            color: white;
+            font-weight: bold;
+            padding: 4px;
+        }
+
+        .content {
+            border: 1px solid white;
+            display: none;
+            height: 100px;
+            padding: 5px;
+        }
+
+        .content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="inline">
+        <div id="grid"></div>
+        <div id="tabs">
+            <div id="tabgrid">
+                <div class="tab active">Inventory</div>
+                <div class="tab">TextText</div>
+                <div class="tab">TextTextText</div>
+            </div>
+            <div class="content active">
+                <div id="inventory"></div>
+            </div>
+            <div class="content"></div>
+            <div class="content"></div>
+        </div>
+    </div>
+    <div id="keycode"></div>
+    <div id="messagetext"></div>
+    <script type="module" src="./client.js"></script>
+</body>
+</html>
